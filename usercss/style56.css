@@ -1,0 +1,52 @@
+body{
+    padding: 0px;
+    margin: 0px;
+    background-color:black;
+    color: white;
+    font-family: 'Times New Roman', serif;
+}
+
+.carousel-height{
+    height: 450px;
+}
+
+.hw{
+    width: 70%;
+    height: 480px;
+    margin-left: 220px;
+}
+
+.box3{
+    margin-top: -30px;
+    font-size: 22px;
+}
+
+
+table tr th img{
+    height: 185px;
+    width: 93%;
+
+}
+
+tr th{
+    text-align: center;
+}
+
+tr td{
+    text-align: center;
+}
+.name{
+    text-align: center;
+}
+.card1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    /* background-color: #fff; */
+    background-clip: border-box;
+    /* border: 1px solid rgba(0,0,0,.125); */
+    border-radius: 0.25rem;
+    text-align: center;
+}

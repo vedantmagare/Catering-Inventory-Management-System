@@ -1,0 +1,43 @@
+mysql -h localhost -u root
+ 
+ 
+create database cateringdb;
+ 
+use cateringdb;
+
+CREATE TABLE menutype (
+  mtid int(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  menutypename varchar(100) NOT NULL  
+);
+
+CREATE TABLE menu (
+  mid int(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  mtid int(20) references menutype(mtid), 
+  menuname varchar(50),
+  description varchar(100) NOT NULL,
+  rate double
+);
+
+create table image(imageid int primary key auto_increment,mid int references menu(mid),iname varchar(50));
+
+CREATE TABLE customer (
+  userid int(20) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username varchar(50) NOT NULL,
+  password varchar(50) NOT NULL,
+  custname varchar(100) NOT NULL,
+  custaddr varchar(2000) NOT NULL,
+  custstate varchar(50) NOT NULL,
+  custpin varchar(6) NOT NULL,
+  custmob varchar(10) NOT NULL,
+  custemailid varchar(50) NOT NULL
+);
+
+create table booking(bookingid int primary key,userid int references customer(userid),venue varchar(100),description varchar(100));
+
+
+create table bookingdetail(bdid int primary key,bookingid int references booking(bookingid),fdate date,fdesc varchar(100),mid int references menu(sdid),quantity int default 0);
+
+
+create table billing(billid int primary key,bookingid int references booking(bookingid),amount double,taxamount double,totalamount double,bdate date);
+
+
